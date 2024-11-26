@@ -1,0 +1,45 @@
+@import "./styles/utils"; // 확장자 생략 가능, ./는 현재경로를 의미하는 생대경로, styles folder의 utils.scss파일을 import.
+
+.SassComponent {
+  display: flex; /* display: flex;는 flex layout을  설정해 준다. 요소들을 수평 또는 수직으로 정렬하고 간격을 조절하는 등의 
+  layout을 보다 더 쉽게 만들도록 도와준다. 자식요소는 flex item으로 취급된다. */
+  .box {
+    background: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in; /* 모든 스타일 속성에 대한 전환 효과를 적용하고, 스타일 변화는 0.3초 동안 진행하며,
+    변화가 느리게 시작해서 점차 빨라지는 방식으로 애니메이션이 진행. */
+    &.red {
+      // .red class가 .box와 함께 사용
+      background: $red;
+      @include square(1);
+    }
+    &.orange {
+      background-color: $orange;
+      @include square(2);
+    }
+    &.yellow {
+      background: $yellow;
+      @include square(3);
+    }
+    &.green {
+      background: $green;
+      @include square(4);
+    }
+    &.blue {
+      background: $blue;
+      @include square(5);
+    }
+    &.indigo {
+      background: $indigo;
+      @include square(6);
+    }
+    &.violet {
+      background: $violet;
+      @include square(7);
+    }
+    &:hover {
+      // mouse hover 시 css 효과 적용
+      background: black;
+    }
+  }
+}
