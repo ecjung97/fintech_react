@@ -3,6 +3,12 @@
 .SassComponent {
   display: flex; /* display: flex;는 flex layout을  설정해 준다. 요소들을 수평 또는 수직으로 정렬하고 간격을 조절하는 등의 
   layout을 보다 더 쉽게 만들도록 도와준다. 자식요소는 flex item으로 취급된다. */
+
+  background-color: $oc-gray-2;
+  @include media('<768px') { // 너비가 768px 이하이면 작동하는 반응형 디자인
+    background-color: $oc-gray-9;
+  }
+
   .box {
     background: red;
     cursor: pointer;

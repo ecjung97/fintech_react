@@ -1,0 +1,20 @@
+/* 확장자를 .module.css로 주면 파일이름_클래스이름_해시값 형태의 스타일 클래스 이름이 자동으로 만들어 져서 고유한 클래스 으림을 가지게 된다. */
+
+.wrapper { /* {wrapper: "CSSModule_wrapper_해쉬값"} 형태로 고유한 클래스 이름으로 만들어 진다. */
+    background: black;
+    padding: 1rem; /* rem은 상태적 크기 단위 */
+    color: white;
+    font-size: 2rem;
+}
+
+.inverted {
+    color: black;
+    background: white;
+    border: 1px solid black;
+}
+
+/* 글로벌 css를 작성 */
+:global .something {
+    font-weight: 800;
+    color: aqua;
+}
