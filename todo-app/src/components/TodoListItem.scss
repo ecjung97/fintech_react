@@ -1,0 +1,53 @@
+.TodoListItem {
+  padding: 1rem;
+  display: flex;
+  align-items: center; /* 수직 세로 중앙정렬 */
+  &:nth-child(even) {
+    /* 짝수번째 요소 선택 */
+    background: yellow;
+  }
+
+  .checkbox {
+    cursor: pointer;
+    flex: 1; // 차지할 수 있는 영역 모두 차지
+    display: flex;
+    align-items: center;
+    svg {
+      // 아이콘
+      font-size: 1.5rem;
+    }
+    .text {
+      margin-left: 0.5rem;
+      flex: 1;
+    }
+    &.checked {
+      // 체크가 되어졌을 때 보여줄 스타일
+      svg {
+        color: #22b8cf;
+      }
+      .text {
+        color: #adb5bd;
+        text-decoration: line-through; /* text 가로 중앙에 취소선을 표시 */
+      }
+    }
+  }
+
+  .remove {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    cursor: pointer;
+    &:hover {
+      color: #ff8787;
+    }
+  }
+
+  & + & {
+    /* - & + & : .remove 클래스 다음에 나오는 .remove 클래스에 스타일을 적용한다.
+    이 경우에는 .remove 클래스가 두 개 연속적으로 이어지는 경우에만 적용된다.
+    이렇게 하면 두번째, 세번째 상자위에 윗줄선 두깨 5px, 실선(solid), 윗줄선 색을 빨강으로 처리.
+    */
+    border-top: 5px solid red;
+  }
+}
